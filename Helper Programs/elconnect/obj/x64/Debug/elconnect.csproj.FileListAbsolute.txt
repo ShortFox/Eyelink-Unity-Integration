@@ -1,0 +1,12 @@
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.csprojAssemblyReference.cache
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\bin\x64\elconnect.exe
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\bin\x64\elconnect.pdb
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\bin\x64\Interop.SREYELINKLib.dll
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\bin\x64\stdole.dll
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.csproj.ResolveComReference.cache
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.EyelinkWindow.resources
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.csproj.GenerateResource.cache
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.csproj.CoreCompileInputs.cache
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.csproj.CopyComplete
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.exe
+C:\Users\MQ20174983\Documents\Git\Eyelink-Unity-Integration\Helper Programs\elconnect\obj\x64\Debug\elconnect.pdb

@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "EyeLinkTrackerSetup/1.0.0": {
+        "dependencies": {
+          "Interop.SREYELINKLib": "1.2.0.0"
+        },
+        "runtime": {
+          "EyeLinkTrackerSetup.dll": {}
+        }
+      },
+      "Interop.SREYELINKLib/1.2.0.0": {
+        "runtime": {
+          "Interop.SREYELINKLib.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EyeLinkTrackerSetup/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Interop.SREYELINKLib/1.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
