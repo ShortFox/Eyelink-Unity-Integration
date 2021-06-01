@@ -9,7 +9,13 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
 {
     // Gaze Position Text
     [SerializeField] Text _screenText;
+    // Object to display gaze
+    [SerializeField] ScreenToPosition _displayCube;
+
     private bool _showGaze;
+    /// <summary>
+    /// Toggles gaze position UI and display cube component.
+    /// </summary>
     private bool ShowGaze
     {
         get { return _showGaze; }
@@ -20,10 +26,7 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         }
     }
 
-    // Object to display gaze
-    [SerializeField] ScreenToPosition _displayCube;
 
-    IEnumerator CurrentCoroutine = null;
 
     // EyeLink
     private SREYELINKLib.EL_EYE eye;
@@ -31,7 +34,12 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
     private SREYELINKLib.EyeLink el;
     Process _myProcess = new Process();
 
+    // Coroutine used to read gaze data
+    IEnumerator CurrentCoroutine = null;
 
+    /// <summary>
+    /// Start method is called when the Unity3D scene is loaded.
+    /// </summary>
     private void Start()
     {
         eye = SREYELINKLib.EL_EYE.EL_EYE_NONE;
@@ -39,17 +47,21 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         el = new SREYELINKLib.EyeLink();
 
 
-
+        // Listen for keyboard events.
         EventArguments.Instance.OnCDown += ELTrackerSetup;
         EventArguments.Instance.OnDDown += PerformDriftCorrect;
         EventArguments.Instance.OnQDown += StopGaze;
         EventArguments.Instance.OnPDown += StartGaze;
 
+        // Define Process parameters.
         _myProcess.EnableRaisingEvents = true;
         _myProcess.Exited += new EventHandler(Ps_Exited);
         _myProcess.StartInfo.UseShellExecute = true;
         _myProcess.StartInfo.RedirectStandardOutput = false;
     }
+    /// <summary>
+    /// Opens EyeLinkTrackerSetup.exe and performs SR Tracker Setup.
+    /// </summary>
     private void ELTrackerSetup()
     {
         StopGaze();
@@ -60,6 +72,9 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         _myProcess.Start();
         _myProcess.WaitForExit();
     }
+    /// <summary>
+    /// Opens EyeLinkTrackerSetup.exe and performs and applies drift correction.
+    /// </summary>
     private void PerformDriftCorrect()
     {
         StopGaze();
@@ -70,6 +85,11 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         _myProcess.Start();
         _myProcess.WaitForExit();
     }
+    /// <summary>
+    /// Callback method for when EyeLinkTrackerSetup.exe finishes execution. If no error, than call <see cref="StartGaze"/>.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void Ps_Exited(object sender, EventArgs e)
     {
         if (_myProcess.ExitCode == 0)
@@ -78,7 +98,9 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         }
         else UnityEngine.Debug.LogError("Error: Tracker Setup Not Successful. Code: " + _myProcess.ExitCode);    
     }
-
+    /// <summary>
+    /// Stops eye-tracker gaze recording. Closes link to eye-tracker.
+    /// </summary>
     private void StopGaze()
     {
         if (CurrentCoroutine == null) return;
@@ -91,6 +113,9 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
 		el.close();
 
     }
+    /// <summary>
+    /// Opens link to eye-tracker and sends commands. Calls <see cref="DrawGaze"/>
+    /// </summary>
     private void StartGaze()
     {
         if (CurrentCoroutine != null) return;
@@ -105,6 +130,10 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         CurrentCoroutine = DrawGaze();
         StartCoroutine(CurrentCoroutine);
     }
+    /// <summary>
+    /// Starts eye-tracker recording. Updates gaze position UI and sets the position of the yellow square (see <see cref="ScreenToPosition"/>.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator DrawGaze()
     {
         ShowGaze = true;
@@ -144,6 +173,10 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
             yield return null;
         }
     }
+    /// <summary>
+    /// Toggles gaze position UI and display cube components
+    /// </summary>
+    /// <param name="state">Boolean determining on/off state of components.</param>
     private void ToggleGazeComponents(bool state)
     {
         _displayCube.gameObject.SetActive(state);
