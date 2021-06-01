@@ -23,6 +23,8 @@ The following keyboard shortcuts are available to you:
 * **Q:** Stop drawing gaze data from eye-tracker to screen. This is automatically called before triggering a tracker setup (C) or drift correction (D). This will also disable the "Message Text" and yellow square game components.
 * **SPACE:** This will perform a gaze offset within the Unity3D environment without affecting the eye-tracker's calibration. The offset is set to the center of the game screen.
 
+**Typical Operation:** Press **C** to start tracker setup. When the tracker setup application opens, press **C** to calibrate, **ENTER** to accept, **V** to validate, **ENTER** to accept, **D** to perform direct correction, **ENTER** to accept. Then press **ESC** to return to Unity. Once returned to Unity, press **G** to show the location of the gaze, **D** to perform and apply drift correction, and **Q** to close connection to eye-tracker.
+
 To close, force quit the application.
 
 ## Unity3D Project
