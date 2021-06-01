@@ -35,3 +35,7 @@ The relevant application [scripts](https://github.com/ShortFox/Eyelink-Unity-Int
 
 ## EyelinkTrackerSetup C# Windows Form Application
 Unity3D creates a new process which handles the SR tracker setup and drift correction. The project solution can be found in the [EyelinkTrackerSetup folder](https://github.com/ShortFox/Eyelink-Unity-Integration/tree/main/Helper%20Programs). The main program is found in _Program.cs_. The program expects one of two optional parameters: _setup_ which will perform SR's tracker setup, or _driftCorrect_ which will check and apply a drift correction. The application returns 0 if there are no errors. This application is modeled after SR's C# example, [elconnect](https://github.com/ShortFox/Eyelink-Unity-Integration/tree/main/Helper%20Programs) which is also included for reference.
+
+## Contact
+
+Questions, suggestions or comments? Contact Dr. Patrick Nalepka ([ShortFox](https://github.com/ShortFox)).
