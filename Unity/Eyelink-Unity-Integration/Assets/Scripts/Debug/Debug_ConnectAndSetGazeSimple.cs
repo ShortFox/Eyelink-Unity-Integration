@@ -121,6 +121,7 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         if (CurrentCoroutine != null) return;
 		
 		el.open("100.1.1.1", 0);
+        el.openDataFile("unity.edf");
         el.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE");
         el.sendCommand("screen_pixel_coords=0,0," + Screen.currentResolution.width.ToString() + "," + Screen.currentResolution.height.ToString());
         el.setOfflineMode();
@@ -137,7 +138,7 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
     IEnumerator DrawGaze()
     {
         ShowGaze = true;
-        el.startRecording(false, false, true, false);
+        el.startRecording(true, false, true, false);
 
         double lastSampleTime = 0.0;
 
