@@ -124,6 +124,8 @@ public class Debug_ConnectAndSetGazeSimple : MonoBehaviour
         el.openDataFile("unity.edf");
         el.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE");
         el.sendCommand("screen_pixel_coords=0,0," + Screen.currentResolution.width.ToString() + "," + Screen.currentResolution.height.ToString());
+        el.sendMessage("unity");
+
         el.setOfflineMode();
         elutil.pumpDelay(50);
 
